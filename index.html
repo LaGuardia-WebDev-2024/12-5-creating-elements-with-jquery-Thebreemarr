@@ -6,16 +6,35 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-           <h1>Creature Creator</h1>
-        
-        <p>What happens when you combine these two animals?</p>
-        <img src="https://www.kasandbox.org/programming-images/animals/shark.png" height="150" alt="shark">
-        <img src="https://www.kasandbox.org/programming-images/animals/spider.png" height="150" alt="spider">
-        
-        <p class="result">You get a sharkspider!</p>
+    <h1>Creature Creator</h1>
+
+    <p>What happens when you combine these two animals? (click the red to find out)</p>
+    <img
+      src="https://www.kasandbox.org/programming-images/animals/shark.png"
+      height="150"
+      alt="shark"
+    />
+    <img
+      src="https://www.kasandbox.org/programming-images/animals/spider.png"
+      height="150"
+      alt="spider"
+    />
+
+    <p class="result">You get a <span class="click-here">spidershark!</span></p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
- 
+      $(".click-here").mouseover(function () {
+        var p = $("<p>");
+        p.text("The results can be horrifying...");
+        $("p").append(p);
+        
+        var img1= $("<img>")
+        img1.attr(
+          "src",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_L0-lD6c3CntEyXDLf02lzB9LjqFV84CJ1Q&s"
+        );
+        $("body").append(img1)
+      });
     </script>
   </body>
 </html>
